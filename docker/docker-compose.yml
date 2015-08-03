@@ -1,0 +1,20 @@
+# Redis Server
+redis:
+  image: redis
+  volumes:
+    - /srv/mydir/database/redis/data:/data
+  restart: always
+#wechat app
+wx:
+  image: ynuae/nslookup-wx
+  ports:
+    - "35005:18080"
+  links:
+    - redis:redis
+  environment:
+    - QYH_CORPID=my_corpId
+    - QYH_SECRET=my_secret
+    - NSLOOKUP_TOKEN=app_token
+    - NSLOOKUP_AESKEY=app_aeskey
+    - NSLOOKUP_AGENTID=4
+  restart: always
