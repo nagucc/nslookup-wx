@@ -26,3 +26,7 @@
     - `NSLOOKUP_AGENTID=4` 应用的ID
 3. 保存并关闭文件
 4. 使用`docker-compose`运行容器：`docker-compose up`
+
+### 2. 在微信企业号端的设置
+
+按要求设置`token`和`AESKEY`，URL的地方填写`http://yourdomain/nslookup` 
